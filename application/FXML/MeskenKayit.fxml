@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.DropdownButton?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+      <MenuBar layoutY="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+        <GridPane hgap="10" layoutX="20.0" layoutY="75.2" prefHeight="456.0" prefWidth="148.0" vgap="20" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="75.0">
+            
+            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="ANASAYFA" textFill="#ece8e8" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="RAPORLAR" textFill="#FFFFFF" GridPane.rowIndex="6" />
+            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="MESKEN KAYIT" textFill="#FFFFFF" GridPane.rowIndex="2" />
+            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="GELIRLER" textFill="#FFFFFF" GridPane.rowIndex="5" />
+            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="BANKA ISLEMLERI" textFill="#FFFFFF" GridPane.rowIndex="3" />
+            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="GIDERLER" textFill="#FFFFFF" GridPane.rowIndex="4" />
+         <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="DETAYLI ARAMA" textFill="#FFFFFF" GridPane.rowIndex="7" />
+         <columnConstraints>
+            <ColumnConstraints fillWidth="false" />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="38.2" minHeight="0.0" prefHeight="0.0" />
+            <RowConstraints maxHeight="39.0" minHeight="0.0" prefHeight="38.2" />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+      <Accordion layoutX="233.0" layoutY="187.0" />
+      <Separator layoutX="1.0" layoutY="76.0" prefHeight="0.0" prefWidth="800.0" />
+      <Separator layoutX="178.0" layoutY="18.0" orientation="VERTICAL" prefHeight="577.0" prefWidth="13.0" />
+      <Label layoutX="349.0" layoutY="26.0" prefHeight="3.0" prefWidth="257.0" text="  MESKEN KAYIT" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Dubai Regular" size="34.0" />
+         </font>
+      </Label>
+      <Label layoutX="192.0" layoutY="100.0" prefHeight="44.0" prefWidth="183.0" text="Apartman Seciniz:">
+         <font>
+            <Font name="Dubai Regular" size="24.0" />
+         </font>
+      </Label>
+      <DropdownButton layoutX="390.0" layoutY="108.0" prefHeight="44.0" prefWidth="113.0">
+          <items>
+              <MenuItem text="Choice 1" />
+              <MenuItem text="Choice 2" />
+              <MenuItem text="Choice 3" />
+          </items>
+      </DropdownButton>
+      <Label layoutX="192.0" layoutY="144.0" prefHeight="40.0" prefWidth="100.0" text="Ikamet Eden:">
+         <font>
+            <Font name="Dubai Regular" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="192.0" layoutY="216.0" prefHeight="38.0" prefWidth="77.0" text="Adi:" AnchorPane.rightAnchor="531.0" AnchorPane.topAnchor="190.0">
+         <font>
+            <Font name="Dubai Regular" size="14.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff04" height="147.0" layoutX="185.0" layoutY="183.0" stroke="BLACK" strokeType="INSIDE" width="608.0" />
+      <Label layoutX="191.0" layoutY="218.0" prefHeight="38.0" prefWidth="77.0" text="Soyadi:">
+         <font>
+            <Font name="Dubai Regular" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="191.0" layoutY="242.0" prefHeight="38.0" prefWidth="77.0" text="GSM:" AnchorPane.topAnchor="247.0">
+         <font>
+            <Font name="Dubai Regular" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="194.0" layoutY="281.0" prefHeight="38.0" prefWidth="77.0" text="E-mail:" AnchorPane.topAnchor="276.0">
+         <font>
+            <Font name="Dubai Regular" size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="226.0" layoutY="197.0" prefHeight="12.0" prefWidth="162.0" promptText="Adinizi Giriniz" />
+      <TextField layoutX="242.0" layoutY="224.0" promptText="Soyadinizi Giriniz" />
+      <TextField layoutX="242.0" layoutY="253.0" promptText="GSM Giriniz" />
+      <TextField layoutX="242.0" layoutY="287.0" promptText="E-mail Giriniz" />
+      <Label layoutX="450.0" layoutY="199.0" prefHeight="38.0" prefWidth="77.0" text="Block:">
+         <font>
+            <Font name="Dubai Regular" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="450.0" layoutY="237.0" prefHeight="38.0" prefWidth="77.0" text="Daire">
+         <font>
+            <Font name="Dubai Regular" size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="499.0" layoutY="205.0" prefHeight="12.0" prefWidth="162.0" promptText="Block Giriniz" />
+      <TextField layoutX="499.0" layoutY="243.0" prefHeight="12.0" prefWidth="162.0" promptText="Daire Num Giriniz" />
+      <CheckBox layoutX="186.0" layoutY="345.0" mnemonicParsing="false" prefWidth="274.0" text="Ikamet Eden Kisi Ev Sahibi Mi?">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </CheckBox>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff06" height="200.0" layoutX="184.0" layoutY="386.0" stroke="BLACK" strokeType="INSIDE" width="274.0" />
+      <Label layoutX="191.0" layoutY="400.0" prefHeight="26.0" prefWidth="35.0" text="Adi:">
+         <font>
+            <Font name="Dubai Regular" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="191.0" layoutY="426.0" prefHeight="26.0" prefWidth="45.0" text="Soyadi:">
+         <font>
+            <Font name="Dubai Regular" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="191.0" layoutY="452.0" prefHeight="27.0" prefWidth="46.0" text="GSM:">
+         <font>
+            <Font name="Dubai Regular" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="191.0" layoutY="479.0" prefHeight="38.0" prefWidth="46.0" text="E-mail:">
+         <font>
+            <Font name="Dubai Regular" size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="214.0" layoutY="400.0" prefHeight="26.0" prefWidth="245.0" promptText="Adinizi Giriniz" />
+      <TextField layoutX="231.0" layoutY="426.0" prefHeight="26.0" prefWidth="226.0" promptText="Soyadinizi Giriniz" />
+      <TextField layoutX="231.0" layoutY="453.0" prefHeight="26.0" prefWidth="226.0" promptText="GSM Giriniz" />
+      <TextField layoutX="231.0" layoutY="485.0" prefHeight="26.0" prefWidth="226.0" promptText="E-mail Giriniz" />
+      <CheckBox layoutX="470.0" layoutY="497.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="322.0" text="Dairenin Hali Hazirda Borcu Var Mi?">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </CheckBox>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff06" height="60.0" layoutX="502.0" layoutY="526.0" stroke="BLACK" strokeType="INSIDE" width="274.0" />
+      <TextField layoutX="502.0" layoutY="526.0" prefHeight="60.0" prefWidth="274.0" promptText="Tahsis Edilmesi Gereken Miktari Giriniz" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff06" height="120.0" layoutX="502.0" layoutY="353.0" stroke="BLACK" strokeType="INSIDE" width="274.0" />
+      <TextField layoutX="500.0" layoutY="352.0" prefHeight="147.0" prefWidth="274.0" promptText="Eklemek Istediginiz NOTLARI Buraya Giriniz" />
+    </children>
+</AnchorPane>
