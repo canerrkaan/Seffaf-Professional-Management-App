@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
@@ -9,112 +8,225 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
-    <children>
-      <MenuBar layoutY="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-            <Menu mnemonicParsing="false" text="Unspecified Menu">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-              </items>
-            </Menu>
-        </menus>
-      </MenuBar>
-        <GridPane hgap="10" layoutX="20.0" layoutY="75.2" prefHeight="356.0" prefWidth="161.0" vgap="20" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="75.0">
+<AnchorPane xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ExpenseCodeController">
+    
+    <!-- Top Section with Logo and Menu -->
+    <HBox spacing="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="14.0">
+        <!-- Logo Placeholder -->
+        <ImageView fx:id="logoImageView">
+            <!-- Add the image source later -->
+        </ImageView>
+    </HBox>
+
+    <!-- Main Title -->
+    <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Expense Code Management" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="70.0" />
+
+    <!-- Main container for the content -->
+    <VBox spacing="20.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="120.0">
+
+        <!-- TableView for displaying essential ExpenseCode entries -->
+        <TableView fx:id="expenseCodeTable" prefHeight="210.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="cariKoduColumn" text="Cari Kodu" />
+                <TableColumn fx:id="firmaAdiColumn" text="Firma Adi" />
+                <TableColumn fx:id="adiColumn" text="Adi" />
+                <TableColumn fx:id="soyadiColumn" text="Soyadi" />
+                <TableColumn fx:id="grupKoduColumn" text="Grup Kodu" />
+            </columns>
+        </TableView>
+
+        <!-- GridPane for Entry Fields -->
+        <GridPane hgap="10.0" vgap="10.0">
+            <!-- Row 1 -->
+            <Label text="Cari Kodu:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="cariKoduField" promptText="Enter Cari Kodu" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+            <Label text="Grup Kodu:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <TextField fx:id="grupKoduField" promptText="Enter Grup Kodu" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+            <Label text="Firma Adi:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="firmaAdiField" promptText="Enter Firma Adi" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="Yetkili Adi:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="yetkiliAdiField" promptText="Enter Yetkili Adi" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+            <!-- Row 2 -->
+            <Label text="Yetkili Soyadi:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextField fx:id="yetkiliSoyadiField" promptText="Enter Yetkili Soyadi" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <Label text="Vergi Dairesi:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="vergiDairesiField" promptText="Enter Vergi Dairesi" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+            <Label text="Vergi No:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <TextField fx:id="vergiNoField" promptText="Enter Vergi No" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+            <Label text="Banka Adi:" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField fx:id="bankaAdiField" promptText="Enter Banka Adi" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+
+            <Label text="IBAN NO:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <TextField fx:id="ibanNoField" promptText="Enter IBAN NO" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             
-            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="MESKEN KAYIT" textFill="#ece8e8" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="DETAYLI ARAMA" textFill="#FFFFFF" GridPane.rowIndex="6" />
-            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="BANKA ISLEMLERI" textFill="#FFFFFF" GridPane.rowIndex="2" />
-            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="RAPORLAR" textFill="#FFFFFF" GridPane.rowIndex="5" />
-            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="GIDERLER" textFill="#FFFFFF" GridPane.rowIndex="3" />
-            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="GELIRLER" textFill="#FFFFFF" GridPane.rowIndex="4" />
-         <columnConstraints>
-            <ColumnConstraints fillWidth="false" />
-            <ColumnConstraints />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints maxHeight="38.2" minHeight="0.0" prefHeight="0.0" />
-            <RowConstraints maxHeight="39.0" minHeight="0.0" prefHeight="38.2" />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-         </rowConstraints>
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+            </columnConstraints>
+            
+            <rowConstraints>
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+            </rowConstraints>
         </GridPane>
-      <Accordion layoutX="233.0" layoutY="187.0" />
-      <TableView layoutX="185.0" layoutY="89.0" prefHeight="465.0" prefWidth="610.0">
-        <columns>
-          <TableColumn prefWidth="37.60003662109375" text="S.No" />
-          <TableColumn prefWidth="95.99992370605469" text="Evrak/Cari Kodu" />
-            <TableColumn prefWidth="71.199951171875" text="Islem Tarihi" />
-            <TableColumn prefWidth="72.79998779296875" text="Hesap Kodu" />
-            <TableColumn prefWidth="96.79998779296875" text="Hesap Aciklama" />
-            <TableColumn prefWidth="59.20001220703125" text="Aciklama" />
-            <TableColumn prefWidth="100.79998779296875" text="Toplam Tutar" />
-            <TableColumn prefWidth="75.199951171875" text="Odeme Yeri" />
-        </columns>
-      </TableView>
-      <Separator layoutX="1.0" layoutY="76.0" prefHeight="0.0" prefWidth="800.0" />
-      <Separator layoutX="178.0" layoutY="18.0" orientation="VERTICAL" prefHeight="577.0" prefWidth="13.0" />
-      <Button layoutX="185.0" layoutY="555.0" mnemonicParsing="false" text="Ekle" />
-      <Button layoutX="254.0" layoutY="555.0" mnemonicParsing="false" text="Sil" />
-      <Button layoutX="645.0" layoutY="555.0" mnemonicParsing="false" text="Filtrele" />
-      <Button layoutX="716.0" layoutY="555.0" mnemonicParsing="false" text="Degistir" />
-      <MenuBar layoutX="185.0" layoutY="69.0" prefHeight="21.0" prefWidth="617.0">
-         <menus>
-            <Menu mnemonicParsing="false" text="Sirala">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Close" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Excel'e Aktar">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Delete" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Makbuz Kes">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="About" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Yazdir">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Action 1" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Hesap Tanimla">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Action 1" />
-               </items>
-            </Menu>
-         </menus>
-      </MenuBar>
-      <Label layoutX="374.0" layoutY="21.0" prefHeight="60.0" prefWidth="231.0" text="GIDERLER" textAlignment="JUSTIFY">
-         <font>
-            <Font name="Dubai Regular" size="34.0" />
-         </font>
-      </Label>
-    </children>
+
+        <!-- Separator for Address Information -->
+        <Separator orientation="HORIZONTAL" />
+
+        <!-- Address Information Section -->
+        <GridPane hgap="10.0" vgap="10.0">
+            <Label text="Address:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="addressField" promptText="Enter Address" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="0" />
+
+            <Label text="Posta Code:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="postaCodeField" promptText="Enter Posta Code" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="City:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="cityField" promptText="Enter City" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+            <Label text="State:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextField fx:id="stateField" promptText="Enter State" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <Label text="GSM:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="gsmField" promptText="Enter GSM" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+            <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <TextField fx:id="emailField" promptText="Enter Email" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+            <Label text="Web:" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField fx:id="webField" promptText="Enter Web URL" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            
+            <!-- Financial Summary Section -->
+            <Label style="-fx-font-weight: bold;" text="Giren: " GridPane.columnIndex="4" GridPane.rowIndex="0" />
+            <Label fx:id="girenLabel" text="0.00" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+
+            <Label style="-fx-font-weight: bold;" text="Cikan: " GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Label fx:id="cikanLabel" text="0.00" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+
+            <Label style="-fx-font-weight: bold;" text="Borc: " GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Label fx:id="borcLabel" text="0.00" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+            </columnConstraints>
+            
+            <rowConstraints>
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+            </rowConstraints>
+        </GridPane>
+
+        <!-- Buttons Section -->
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <Button fx:id="button1" prefWidth="100.0" text="Yeni">
+            <font>
+               <Font size="18.0" />
+            </font></Button>
+            <Button fx:id="button2" prefWidth="150.0" text="Sil">
+            <font>
+               <Font size="18.0" />
+            </font></Button>
+            <Button fx:id="button3" prefHeight="40.0" prefWidth="150.0" text="Kaydet">
+            <font>
+               <Font size="18.0" />
+            </font></Button>
+            <Button fx:id="button4" prefHeight="40.0" prefWidth="150.0" text="Ara">
+            <font>
+               <Font size="18.0" />
+            </font></Button>
+            <Button fx:id="button5" prefHeight="40.0" prefWidth="150.0" text="Haraketler">
+            <font>
+               <Font size="18.0" />
+            </font></Button>
+            <Button fx:id="button6" prefHeight="40.0" prefWidth="150.0" text="Ekstre Al">
+            <font>
+               <Font size="18.0" />
+            </font></Button>
+        </HBox>
+
+    </VBox>
+
+     <!-- Menu Bar -->
+     <MenuBar layoutX="299.0" layoutY="29.0">
+         <Menu text="Islemler">
+             <MenuItem text="Islem 1" />
+             <MenuItem text="Islem 2" />
+             <MenuItem text="Islem 3" />
+         </Menu>
+         
+            <!-- Additional Menus -->
+         <Menu text="Borclandirma ">
+             <MenuItem text="Borclandirma 1" />
+             <MenuItem text="Borclandirma 2" />
+             <MenuItem text="Borclandirma 3" />
+         </Menu>
+         <Menu text="Tahsilat">
+             <MenuItem text="Tahsilat 1" />
+             <MenuItem text="Tahsilat 2" />
+             <MenuItem text="Tahsilat 3" />
+         </Menu>
+         <Menu text="Icra">
+             <MenuItem text="Icra 1" />
+             <MenuItem text="Icra 2" />
+             <MenuItem text="Icra 3" />
+         </Menu>
+         <Menu text="Banka">
+             <MenuItem text="Banka Raporu 1" />
+             <MenuItem text="Banka Raporu 2" />
+         </Menu>
+         <Menu text="Raporlar">
+             <MenuItem text="Banka Raporlari" />
+             <MenuItem text="Icra Raporlari" />
+             <MenuItem text="Diğer Raporlar" />
+         </Menu>
+         <Menu text="Devir">
+             <MenuItem text="Devir 1" />
+             <MenuItem text="Devir 2" />
+         </Menu>
+         <Menu text="Parametreler">
+             <MenuItem text="Parametre 1" />
+             <MenuItem text="Parametre 2" />
+         </Menu>
+         <Menu text="Yardim">
+             <MenuItem text="Yardim 1" />
+             <MenuItem text="Yardim 2" />
+         </Menu>
+         <Menu text="Diger">
+             <MenuItem text="Islem 1" />
+             <MenuItem text="Islem 2" />
+         </Menu>
+     </MenuBar>
 </AnchorPane>
