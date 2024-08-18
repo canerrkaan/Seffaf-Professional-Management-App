@@ -1,167 +1,202 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.DropdownButton?>
-<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
-    <children>
-      <MenuBar layoutY="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-        <GridPane hgap="10" layoutX="20.0" layoutY="75.2" prefHeight="456.0" prefWidth="148.0" vgap="20" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="75.0">
+<AnchorPane xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MeskenKayitController">
+
+    <!-- Top Section with Logo and Menu -->
+    <VBox spacing="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="14.0">
+        <!-- Logo Placeholder -->
+        <ImageView fx:id="logoImageView">
+            <!-- Add the image source later -->
+        </ImageView>
+
+        
+     <!-- Menu Bar -->
+     <MenuBar layoutX="299.0" layoutY="29.0">
+         <Menu text="Islemler">
+             <MenuItem text="Islem 1" />
+             <MenuItem text="Islem 2" />
+             <MenuItem text="Islem 3" />
+         </Menu>
+         
+            <!-- Additional Menus -->
+         <Menu text="Borclandirma ">
+             <MenuItem text="Borclandirma 1" />
+             <MenuItem text="Borclandirma 2" />
+             <MenuItem text="Borclandirma 3" />
+         </Menu>
+         <Menu text="Tahsilat">
+             <MenuItem text="Tahsilat 1" />
+             <MenuItem text="Tahsilat 2" />
+             <MenuItem text="Tahsilat 3" />
+         </Menu>
+         <Menu text="Icra">
+             <MenuItem text="Icra 1" />
+             <MenuItem text="Icra 2" />
+             <MenuItem text="Icra 3" />
+         </Menu>
+         <Menu text="Banka">
+             <MenuItem text="Banka Raporu 1" />
+             <MenuItem text="Banka Raporu 2" />
+         </Menu>
+         <Menu text="Raporlar">
+             <MenuItem text="Banka Raporlari" />
+             <MenuItem text="Icra Raporlari" />
+             <MenuItem text="Diğer Raporlar" />
+         </Menu>
+         <Menu text="Devir">
+             <MenuItem text="Devir 1" />
+             <MenuItem text="Devir 2" />
+         </Menu>
+         <Menu text="Parametreler">
+             <MenuItem text="Parametre 1" />
+             <MenuItem text="Parametre 2" />
+         </Menu>
+         <Menu text="Yardim">
+             <MenuItem text="Yardim 1" />
+             <MenuItem text="Yardim 2" />
+         </Menu>
+         <Menu text="Diger">
+             <MenuItem text="Islem 1" />
+             <MenuItem text="Islem 2" />
+         </Menu>
+     </MenuBar>
+    </VBox>
+
+    <!-- Main Title -->
+    <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Mesken Kayıt" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="70.0" />
+
+    <!-- Main container for the content -->
+    <VBox spacing="20.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="120.0">
+
+        <!-- GridPane for Entry Fields -->
+        <GridPane hgap="10.0" vgap="10.0">
+            <!-- Row 1 -->
+            <Label text="Mesken No:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="meskenNoField" promptText="Enter Mesken No" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+            <Label text="Adi:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <TextField fx:id="adiField" promptText="Enter Adi" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+            <Label text="Soyadi:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="soyadiField" promptText="Enter Soyadi" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="Esinin Adi:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="esininAdiField" promptText="Enter Esinin Adi" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+            <!-- Row 2 -->
+            <Label text="TC Kimlik No:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextField fx:id="tcKimlikNoField" promptText="Enter TC Kimlik No" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <Label text="Vergi Dairesi:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="vergiDairesiField" promptText="Enter Vergi Dairesi" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+            <Label text="Vergi No:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <TextField fx:id="vergiNoField" promptText="Enter Vergi No" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+            <Label text="Kan Grubu:" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField fx:id="kanGrubuField" promptText="Enter Kan Grubu" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+            </columnConstraints>
             
-            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="ANASAYFA" textFill="#ece8e8" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="RAPORLAR" textFill="#FFFFFF" GridPane.rowIndex="6" />
-            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="MESKEN KAYIT" textFill="#FFFFFF" GridPane.rowIndex="2" />
-            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="GELIRLER" textFill="#FFFFFF" GridPane.rowIndex="5" />
-            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="BANKA ISLEMLERI" textFill="#FFFFFF" GridPane.rowIndex="3" />
-            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="GIDERLER" textFill="#FFFFFF" GridPane.rowIndex="4" />
-         <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="DETAYLI ARAMA" textFill="#FFFFFF" GridPane.rowIndex="7" />
-         <columnConstraints>
-            <ColumnConstraints fillWidth="false" />
-            <ColumnConstraints />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints maxHeight="38.2" minHeight="0.0" prefHeight="0.0" />
-            <RowConstraints maxHeight="39.0" minHeight="0.0" prefHeight="38.2" />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-         </rowConstraints>
+            <rowConstraints>
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+            </rowConstraints>
         </GridPane>
-      <Accordion layoutX="233.0" layoutY="187.0" />
-      <Separator layoutX="1.0" layoutY="76.0" prefHeight="0.0" prefWidth="800.0" />
-      <Separator layoutX="178.0" layoutY="18.0" orientation="VERTICAL" prefHeight="577.0" prefWidth="13.0" />
-      <Label layoutX="349.0" layoutY="26.0" prefHeight="3.0" prefWidth="257.0" text="  MESKEN KAYIT" textAlignment="JUSTIFY">
-         <font>
-            <Font name="Dubai Regular" size="34.0" />
-         </font>
-      </Label>
-      <Label layoutX="192.0" layoutY="100.0" prefHeight="44.0" prefWidth="183.0" text="Apartman Seciniz:">
-         <font>
-            <Font name="Dubai Regular" size="24.0" />
-         </font>
-      </Label>
-      <DropdownButton layoutX="390.0" layoutY="108.0" prefHeight="44.0" prefWidth="113.0">
-          <items>
-              <MenuItem text="Choice 1" />
-              <MenuItem text="Choice 2" />
-              <MenuItem text="Choice 3" />
-          </items>
-      </DropdownButton>
-      <Label layoutX="192.0" layoutY="144.0" prefHeight="40.0" prefWidth="100.0" text="Ikamet Eden:">
-         <font>
-            <Font name="Dubai Regular" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="192.0" layoutY="216.0" prefHeight="38.0" prefWidth="77.0" text="Adi:" AnchorPane.rightAnchor="531.0" AnchorPane.topAnchor="190.0">
-         <font>
-            <Font name="Dubai Regular" size="14.0" />
-         </font>
-      </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff04" height="147.0" layoutX="185.0" layoutY="183.0" stroke="BLACK" strokeType="INSIDE" width="608.0" />
-      <Label layoutX="191.0" layoutY="218.0" prefHeight="38.0" prefWidth="77.0" text="Soyadi:">
-         <font>
-            <Font name="Dubai Regular" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="191.0" layoutY="242.0" prefHeight="38.0" prefWidth="77.0" text="GSM:" AnchorPane.topAnchor="247.0">
-         <font>
-            <Font name="Dubai Regular" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="194.0" layoutY="281.0" prefHeight="38.0" prefWidth="77.0" text="E-mail:" AnchorPane.topAnchor="276.0">
-         <font>
-            <Font name="Dubai Regular" size="14.0" />
-         </font>
-      </Label>
-      <TextField layoutX="226.0" layoutY="197.0" prefHeight="12.0" prefWidth="162.0" promptText="Adinizi Giriniz" />
-      <TextField layoutX="242.0" layoutY="224.0" promptText="Soyadinizi Giriniz" />
-      <TextField layoutX="242.0" layoutY="253.0" promptText="GSM Giriniz" />
-      <TextField layoutX="242.0" layoutY="287.0" promptText="E-mail Giriniz" />
-      <Label layoutX="450.0" layoutY="199.0" prefHeight="38.0" prefWidth="77.0" text="Block:">
-         <font>
-            <Font name="Dubai Regular" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="450.0" layoutY="237.0" prefHeight="38.0" prefWidth="77.0" text="Daire">
-         <font>
-            <Font name="Dubai Regular" size="14.0" />
-         </font>
-      </Label>
-      <TextField layoutX="499.0" layoutY="205.0" prefHeight="12.0" prefWidth="162.0" promptText="Block Giriniz" />
-      <TextField layoutX="499.0" layoutY="243.0" prefHeight="12.0" prefWidth="162.0" promptText="Daire Num Giriniz" />
-      <CheckBox layoutX="186.0" layoutY="345.0" mnemonicParsing="false" prefWidth="274.0" text="Ikamet Eden Kisi Ev Sahibi Mi?">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </CheckBox>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff06" height="200.0" layoutX="184.0" layoutY="386.0" stroke="BLACK" strokeType="INSIDE" width="274.0" />
-      <Label layoutX="191.0" layoutY="400.0" prefHeight="26.0" prefWidth="35.0" text="Adi:">
-         <font>
-            <Font name="Dubai Regular" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="191.0" layoutY="426.0" prefHeight="26.0" prefWidth="45.0" text="Soyadi:">
-         <font>
-            <Font name="Dubai Regular" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="191.0" layoutY="452.0" prefHeight="27.0" prefWidth="46.0" text="GSM:">
-         <font>
-            <Font name="Dubai Regular" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="191.0" layoutY="479.0" prefHeight="38.0" prefWidth="46.0" text="E-mail:">
-         <font>
-            <Font name="Dubai Regular" size="14.0" />
-         </font>
-      </Label>
-      <TextField layoutX="214.0" layoutY="400.0" prefHeight="26.0" prefWidth="245.0" promptText="Adinizi Giriniz" />
-      <TextField layoutX="231.0" layoutY="426.0" prefHeight="26.0" prefWidth="226.0" promptText="Soyadinizi Giriniz" />
-      <TextField layoutX="231.0" layoutY="453.0" prefHeight="26.0" prefWidth="226.0" promptText="GSM Giriniz" />
-      <TextField layoutX="231.0" layoutY="485.0" prefHeight="26.0" prefWidth="226.0" promptText="E-mail Giriniz" />
-      <CheckBox layoutX="470.0" layoutY="497.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="322.0" text="Dairenin Hali Hazirda Borcu Var Mi?">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </CheckBox>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff06" height="60.0" layoutX="502.0" layoutY="526.0" stroke="BLACK" strokeType="INSIDE" width="274.0" />
-      <TextField layoutX="502.0" layoutY="526.0" prefHeight="60.0" prefWidth="274.0" promptText="Tahsis Edilmesi Gereken Miktari Giriniz" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff06" height="120.0" layoutX="502.0" layoutY="353.0" stroke="BLACK" strokeType="INSIDE" width="274.0" />
-      <TextField layoutX="500.0" layoutY="352.0" prefHeight="147.0" prefWidth="274.0" promptText="Eklemek Istediginiz NOTLARI Buraya Giriniz" />
-    </children>
+
+        <!-- Separator for Address Information -->
+        <Separator orientation="HORIZONTAL" />
+
+        <!-- Address Information Section -->
+        <GridPane hgap="10.0" vgap="10.0">
+            <Label text="Address:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="addressField" promptText="Enter Address" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="0" />
+
+            <Label text="City:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="cityField" promptText="Enter City" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="State:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="stateField" promptText="Enter State" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+            <Label text="E-posta:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextField fx:id="emailField" promptText="Enter E-posta" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <Label text="GSM:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="gsmField" promptText="Enter GSM" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+            <Label text="Posta Kodu:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <TextField fx:id="postaKoduField" promptText="Enter Posta Kodu" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+            <Label text="Giris Tarihi:" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField fx:id="girisTarihiField" promptText="Enter Giris Tarihi" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+
+            <Label text="Cikis Tarihi:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <TextField fx:id="cikisTarihiField" promptText="Enter Cikis Tarihi" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+            </columnConstraints>
+            
+            <rowConstraints>
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+            </rowConstraints>
+        </GridPane>
+
+        <!-- Buttons Section -->
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <Button fx:id="button1" text="Yeni">
+            <font>
+               <Font size="18.0" />
+            </font></Button>
+            <Button fx:id="button2" text="Sil">
+            <font>
+               <Font size="18.0" />
+            </font></Button>
+            <Button fx:id="button3" text="Kaydet">
+            <font>
+               <Font size="18.0" />
+            </font></Button>
+            <Button fx:id="button4" text="Ara">
+            <font>
+               <Font size="18.0" />
+            </font></Button>
+            <Button fx:id="button5" text="Haraketler">
+            <font>
+               <Font size="18.0" />
+            </font></Button>
+            <Button fx:id="button6" text="Ekstre Al">
+            <font>
+               <Font size="18.0" />
+            </font></Button>
+        </HBox>
+
+    </VBox>
 </AnchorPane>
