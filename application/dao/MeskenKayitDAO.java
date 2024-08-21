@@ -24,7 +24,7 @@ public class MeskenKayitDAO {
             Tenant tenant = meskenKayit.getTenant();
             statement.setString(2, tenant.getNameOfTenant());
             statement.setString(3, tenant.getSurname());
-            statement.setString(4, tenant.getPartnerName());
+            statement.setString(4, (tenant).getPartnerName());
             statement.setInt(5, tenant.getTCNo());
             statement.setString(6, tenant.getTaxPlace());
             statement.setInt(7, tenant.getTaxNo());
@@ -50,29 +50,31 @@ public class MeskenKayitDAO {
         try (Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(query)) {
 
-            while (resultSet.next()) {
-                MeskenKayit meskenKayit = new MeskenKayit();
-                meskenKayit.setMeskenNo(resultSet.getString("meskenNo"));
+        	while (resultSet.next()) {
+        	    MeskenKayit meskenKayit = new MeskenKayit();
+        	    meskenKayit.setMeskenNo(resultSet.getString("meskenNo"));
 
-                Tenant tenant = meskenKayit.getTenant();
-                tenant.setNameOfTenant(resultSet.getString("nameOfTenant"));
-                tenant.setSurname(resultSet.getString("surname"));
-                tenant.setPartnerName(resultSet.getString("partnerName"));
-                tenant.setTCNo(resultSet.getInt("tcNo"));
-                tenant.setTaxPlace(resultSet.getString("taxPlace"));
-                tenant.setTaxNo(resultSet.getInt("taxNo"));
-                tenant.setBloodType(resultSet.getString("bloodType"));
-                tenant.setAddress(resultSet.getString("address"));
-                tenant.setCity(resultSet.getString("city"));
-                tenant.setState(resultSet.getString("state"));
-                tenant.setEmail(resultSet.getString("email"));
-                tenant.setPhoneNumber(resultSet.getString("gsm"));
-                tenant.setPostaKodu(resultSet.getString("postaKodu"));
-                tenant.setDateIn(resultSet.getString("dateIn"));
-                tenant.setDateOut(resultSet.getString("dateOut"));
+        	    Tenant tenant = new Tenant.TenantBuilder(resultSet.getString("nameOfTenant"))
+        	            .setSurname(resultSet.getString("surname"))
+        	            .setPartnerName(resultSet.getString("partnerName"))
+        	            .setTCNo(resultSet.getInt("tcNo"))
+        	            .setTaxPlace(resultSet.getString("taxPlace"))
+        	            .setTaxNo(resultSet.getInt("taxNo"))
+        	            .setBloodType(resultSet.getString("bloodType"))
+        	            .setAddress(resultSet.getString("address"))
+        	            .setCity(resultSet.getString("city"))
+        	            .setState(resultSet.getString("state"))
+        	            .setEmail(resultSet.getString("email"))
+        	            .setPhoneNumber(resultSet.getString("gsm"))
+        	            .setPostaKodu(resultSet.getString("postaKodu"))
+        	            .setDateIn(resultSet.getString("dateIn"))
+        	            .setDateOut(resultSet.getString("dateOut"))
+        	            .build();
 
-                meskenKayitlar.add(meskenKayit);
-            }
+        	    meskenKayit.setTenant(tenant);  // Assuming you have a setTenant() method
+        	    meskenKayitlar.add(meskenKayit);
+        	}
+
         }
 
         return meskenKayitlar;

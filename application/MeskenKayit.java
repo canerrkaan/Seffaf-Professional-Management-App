@@ -6,11 +6,11 @@ import javafx.beans.property.StringProperty;
 public class MeskenKayit {
 
     private final StringProperty meskenNo;
-    private final Tenant tenant;
+    private final Tenant tenant; 
 
     public MeskenKayit() {
         this.meskenNo = new SimpleStringProperty();
-        this.tenant = new Tenant.TenantBuilder().build(); // Creating a new Tenant instance
+        this.tenant = new Tenant.TenantBuilder.setNameOfTenant().build(); // Creating a new Tenant
     }
 
     // Getter and Setter for meskenNo
@@ -26,8 +26,9 @@ public class MeskenKayit {
         return meskenNo;
     }
 
-    // Getter for Tenant (No Setter, as Tenant should be managed via its own builder)
+    // Getter for Tenant
     public Tenant getTenant() {
         return tenant;
     }
 }
+

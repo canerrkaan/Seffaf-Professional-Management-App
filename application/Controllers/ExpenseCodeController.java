@@ -1,6 +1,12 @@
-package application;
+package application.Controllers;
 
-import javafx.beans.binding.Bindings;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import application.ExpenseCode;
+import application.dao.ExpenseCodeDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -77,10 +83,20 @@ public class ExpenseCodeController {
     private Button button6;
 
     private ObservableList<ExpenseCode> expenseCodeList;
+    private ExpenseCodeDAO expenseCodeDAO;
 
     @FXML
     public void initialize() {
-        expenseCodeList = FXCollections.observableArrayList();
+        try {
+            // Establish the database connection
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ExpenseManagement", "username", "password");
+            expenseCodeDAO = new ExpenseCodeDAO(connection);
+
+            // Load data from the database
+            expenseCodeList = FXCollections.observableArrayList(expenseCodeDAO.getAllExpenseCodes());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         // Bind Table Columns to ExpenseCode properties
         cariKoduColumn.setCellValueFactory(new PropertyValueFactory<>("expenseCode"));
@@ -103,9 +119,6 @@ public class ExpenseCodeController {
         button1.setOnAction(event -> addNewExpenseCode());
         button2.setOnAction(event -> deleteSelectedExpenseCode());
         button3.setOnAction(event -> saveChanges());
-        button4.setOnAction(event -> searchExpenseCodes());
-        button5.setOnAction(event -> showMovements());
-        button6.setOnAction(event -> exportStatement());
     }
 
     private void bindFields(ExpenseCode expenseCode) {
@@ -138,23 +151,27 @@ public class ExpenseCodeController {
     private void deleteSelectedExpenseCode() {
         ExpenseCode selectedExpenseCode = expenseCodeTable.getSelectionModel().getSelectedItem();
         if (selectedExpenseCode != null) {
-            expenseCodeList.remove(selectedExpenseCode);
+            try {
+                expenseCodeDAO.deleteExpenseCode(selectedExpenseCode.getId());
+                expenseCodeList.remove(selectedExpenseCode);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 
     private void saveChanges() {
-        // Save changes to database or file
-    }
-
-    private void searchExpenseCodes() {
-        // Implement search functionality
-    }
-
-    private void showMovements() {
-        // Show financial movements related to the selected ExpenseCode
-    }
-
-    private void exportStatement() {
-        // Export financial statement for the selected ExpenseCode
+        ExpenseCode selectedExpenseCode = expenseCodeTable.getSelectionModel().getSelectedItem();
+        if (selectedExpenseCode != null) {
+            try {
+                if (selectedExpenseCode.getId() == 0) {
+                    expenseCodeDAO.createExpenseCode(selectedExpenseCode);
+                } else {
+                    expenseCodeDAO.updateExpenseCode(selectedExpenseCode);
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

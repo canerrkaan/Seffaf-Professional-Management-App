@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BankCalculationsController">
+
+    <!-- Top Section with Logo and Menu -->
+    <VBox spacing="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="14.0">
+        <!-- Logo Placeholder -->
+        <ImageView fx:id="logoImageView">
+            <!-- Add the image source later -->
+        </ImageView>
+
+        <!-- Menu Bar -->
+        <MenuBar layoutX="299.0" layoutY="29.0" prefHeight="21.0" prefWidth="504.0">
+            <Menu text="Islemler">
+                <MenuItem text="Islem 1" />
+                <MenuItem text="Islem 2" />
+                <MenuItem text="Islem 3" />
+            </Menu>
+            
+            <!-- Additional Menus -->
+            <Menu text="Borclandirma">
+                <MenuItem text="Borclandirma 1" />
+                <MenuItem text="Borclandirma 2" />
+                <MenuItem text="Borclandirma 3" />
+            </Menu>
+            <Menu text="Tahsilat">
+                <MenuItem text="Tahsilat 1" />
+                <MenuItem text="Tahsilat 2" />
+                <MenuItem text="Tahsilat 3" />
+            </Menu>
+            <Menu text="Icra">
+                <MenuItem text="Icra 1" />
+                <MenuItem text="Icra 2" />
+                <MenuItem text="Icra 3" />
+            </Menu>
+            <Menu text="Banka">
+                <MenuItem text="Banka Raporu 1" />
+                <MenuItem text="Banka Raporu 2" />
+            </Menu>
+            <Menu text="Raporlar">
+                <MenuItem text="Banka Raporlari" />
+                <MenuItem text="Icra Raporlari" />
+                <MenuItem text="Diğer Raporlar" />
+            </Menu>
+            <Menu text="Devir">
+                <MenuItem text="Devir 1" />
+                <MenuItem text="Devir 2" />
+            </Menu>
+            <Menu text="Parametreler">
+                <MenuItem text="Parametre 1" />
+                <MenuItem text="Parametre 2" />
+            </Menu>
+            <Menu text="Yardim">
+                <MenuItem text="Yardim 1" />
+                <MenuItem text="Yardim 2" />
+            </Menu>
+            <Menu text="Diger">
+                <MenuItem text="Islem 1" />
+                <MenuItem text="Islem 2" />
+            </Menu>
+        </MenuBar>
+    </VBox>
+
+    <!-- Main Title -->
+    <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="BANKA ISLEMLERI" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="70.0" />
+
+    <!-- Main container for the content -->
+    <VBox spacing="20.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="120.0">
+
+        <!-- GridPane for Entry Fields -->
+        <GridPane hgap="10.0" vgap="10.0">
+            <!-- Row 1 -->
+            <Label text="Banka No:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="bankaNoField" promptText="Banka No Giriniz" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+            <Label text="Banka Adi:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <TextField fx:id="bankaAdiField" promptText="Banka Adi Giriniz" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+            <Label text="Subesi:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="subeField" promptText="Sube Giriniz" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="Hesap No:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="hesapNoField" promptText="Hesap No Giriniz" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+            <Label text="Yetkili Adi:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextField fx:id="yetkiliAdiField" promptText="Yetkili Adi Giriniz" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <Label text="Telefon No:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="telefonNoField" promptText="Telefon No Giriniz" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+            <Label text="IBAN No:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <TextField fx:id="ibanNoField" promptText="IBAN No Giriniz" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+            </columnConstraints>
+
+            <rowConstraints>
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+            </rowConstraints>
+        </GridPane>
+
+        <!-- Separator for Summary Information -->
+        <Separator orientation="HORIZONTAL" />
+
+        <!-- Financial Summary Section -->
+        <GridPane hgap="10.0" vgap="10.0">
+            <Label style="-fx-font-weight: bold;" text="Giren: " GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label fx:id="girenLabel" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+            <Label style="-fx-font-weight: bold;" text="Cikan: " GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <Label fx:id="cikanLabel" text="0.00" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+            <Label style="-fx-font-weight: bold;" text="Bakiye: " GridPane.columnIndex="4" GridPane.rowIndex="0" />
+            <Label fx:id="bakiyeLabel" text="0.00" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+            </columnConstraints>
+
+            <rowConstraints>
+                <RowConstraints vgrow="SOMETIMES" />
+            </rowConstraints>
+        </GridPane>
+
+        <!-- TableView for displaying essential Bank records -->
+        <TableView fx:id="bankTable" prefHeight="210.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="bankaNoColumn" text="Banka No" />
+                <TableColumn fx:id="bankaAdiColumn" text="Banka Adi" />
+                <TableColumn fx:id="subeColumn" text="Subesi" />
+            </columns>
+        </TableView>
+
+        <!-- Buttons Section -->
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <Button fx:id="button1" text="Ekle">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Button>
+            <Button fx:id="button2" text="Kaydet">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Button>
+            <Button fx:id="button3" text="Islemler">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Button>
+            <Button fx:id="button4" text="Degistir">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Button>
+            <Button fx:id="button5" text="Sil">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Button>
+            <Button fx:id="button6" text="Hareketler">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Button>
+        </HBox>
+
+    </VBox>
+</AnchorPane>

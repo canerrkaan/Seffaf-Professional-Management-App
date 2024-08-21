@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.DropdownButton?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+      <MenuBar layoutY="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+        <GridPane hgap="10" layoutX="20.0" layoutY="75.2" prefHeight="456.0" prefWidth="148.0" vgap="20" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="75.0">
+            
+            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="ANASAYFA" textFill="#ece8e8" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="RAPORLAR" textFill="#FFFFFF" GridPane.rowIndex="7" />
+            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="MESKEN KAYIT" textFill="#FFFFFF" GridPane.rowIndex="2" />
+            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="GELIRLER" textFill="#FFFFFF" GridPane.rowIndex="5" />
+            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="BANKA ISLEMLERI" textFill="#FFFFFF" GridPane.rowIndex="3" />
+            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="GIDERLER" textFill="#FFFFFF" GridPane.rowIndex="4" />
+         <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="DETAYLI ARAMA" textFill="#FFFFFF" GridPane.rowIndex="8" />
+         <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="CARI ISLEMLER" textFill="#FFFFFF" GridPane.rowIndex="6" />
+         <columnConstraints>
+            <ColumnConstraints fillWidth="false" />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="38.2" minHeight="0.0" prefHeight="0.0" />
+            <RowConstraints maxHeight="39.0" minHeight="0.0" prefHeight="38.2" />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+      <Accordion layoutX="251.0" layoutY="179.0" />
+      <Separator layoutX="1.0" layoutY="76.0" prefHeight="0.0" prefWidth="800.0" />
+      <Separator layoutX="178.0" layoutY="18.0" orientation="VERTICAL" prefHeight="577.0" prefWidth="13.0" />
+      <Label layoutX="368.0" layoutY="21.0" prefHeight="60.0" prefWidth="231.0" text="CARI ISLEMLER" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Dubai Regular" size="34.0" />
+         </font>
+      </Label>
+      <Label layoutX="217.0" layoutY="153.0" text="Firma Adi" />
+      <Label layoutX="590.0" layoutY="115.0" text="Grup Kodu" />
+      <Label layoutX="213.0" layoutY="227.0" text="Vergi Dairesi" />
+      <Label layoutX="216.0" layoutY="188.0" text="Yetkili Adi" />
+      <Label layoutX="216.0" layoutY="266.0" text="Banka Adi" />
+      <Label layoutX="217.0" layoutY="115.0" text="Cari Kodu" />
+      <Button layoutX="661.0" layoutY="565.0" minWidth="42.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="42.0" text="Ekle" />
+      <Button layoutX="590.0" layoutY="524.0" minWidth="47.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="63.0" text="Kaydet" />
+      <Button layoutX="590.0" layoutY="565.0" minWidth="47.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="63.0" text="Islemler" />
+      <Button layoutX="660.0" layoutY="524.0" minWidth="46.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="46.0" text="Sil" />
+      <Button layoutX="722.0" layoutY="565.0" minWidth="47.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="75.0" text="Hareketler">
+         <font>
+            <Font size="5.0" />
+         </font>
+      </Button>
+      <Label layoutX="614.0" layoutY="442.0" text="Giren:" />
+      <Label layoutX="613.0" layoutY="465.0" text="Cikan:" />
+      <Label layoutX="610.0" layoutY="493.0" text="Bakiye:" />
+      <TextField layoutX="278.0" layoutY="111.0" prefHeight="26.0" prefWidth="166.0" promptText="Cari Kodunu Giriniz" />
+      <TextField layoutX="278.0" layoutY="150.0" prefHeight="26.0" prefWidth="386.0" promptText="Firma Adi Giriniz" />
+      <TextField layoutX="278.0" layoutY="185.0" prefHeight="26.0" prefWidth="166.0" promptText="Yetkili Adi Giriniz" />
+      <TextField layoutX="289.0" layoutY="223.0" promptText="Vergi Dairesini Giriniz" />
+      <TextField layoutX="278.0" layoutY="262.0" prefHeight="26.0" prefWidth="165.0" promptText="Banka Adi Giriniz" />
+      <Label layoutX="662.0" layoutY="442.0" prefHeight="18.0" prefWidth="95.0" text="CSS LE BEYAZ YAP VE LINKLE" textFill="#fcefef" />
+      <Label layoutX="662.0" layoutY="465.0" prefHeight="18.0" prefWidth="95.0" text="CSS LE BEYAZ YAP VE LINKLE" />
+      <Label layoutX="662.0" layoutY="493.0" prefHeight="18.0" prefWidth="95.0" text="CSS LE BEYAZ YAP VE LINKLE" />
+      <Button layoutX="724.0" layoutY="524.0" minWidth="47.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="70.0" text="Ekstre Al">
+         <font>
+            <Font size="5.0" />
+         </font>
+      </Button>
+      <Separator layoutX="596.0" layoutY="437.0" prefHeight="3.0" prefWidth="206.0" />
+      <Separator layoutX="591.0" layoutY="438.0" orientation="VERTICAL" prefHeight="82.0" prefWidth="10.0" />
+      <Separator layoutX="596.0" layoutY="518.0" prefWidth="200.0" AnchorPane.bottomAnchor="78.79999999999995" />
+      <Label layoutX="199.0" layoutY="75.0" text="Genel Bilgiler" />
+      <DropdownButton layoutX="666.0" layoutY="110.0">
+          <items>
+              <MenuItem text="Choice 1" />
+              <MenuItem text="Choice 2" />
+              <MenuItem text="Choice 3" />
+          </items>
+      </DropdownButton>
+      <Label layoutX="485.0" layoutY="189.0" text="Yetkili Soyadi" />
+      <Label layoutX="485.0" layoutY="226.0" text="Vergi No" />
+      <Label layoutX="485.0" layoutY="266.0" text="IBAN NO" />
+      <TextField layoutX="571.0" layoutY="262.0" prefHeight="26.0" prefWidth="165.0" promptText="IBAN Giriniz" />
+      <TextField layoutX="571.0" layoutY="223.0" prefHeight="26.0" prefWidth="165.0" promptText="Vergi Numarasi Giriniz" />
+      <TextField layoutX="571.0" layoutY="184.0" prefHeight="26.0" prefWidth="165.0" promptText="Yetkili Soyadi Giriniz" />
+      <Separator layoutX="272.0" layoutY="84.0" prefHeight="10.0" prefWidth="516.0" />
+      <Separator layoutX="183.0" layoutY="298.0" prefHeight="3.0" prefWidth="604.0" />
+      <Separator layoutX="190.0" layoutY="90.0" orientation="VERTICAL" prefHeight="208.0" prefWidth="6.0" />
+      <Separator layoutX="190.0" layoutY="87.0" prefHeight="3.0" prefWidth="6.0" />
+      <Separator layoutX="784.0" layoutY="90.0" orientation="VERTICAL" prefHeight="218.0" prefWidth="6.0" />
+      <Label layoutX="206.0" layoutY="308.0" text="Adres Bilgileri" />
+      <Separator layoutX="288.0" layoutY="312.0" prefHeight="10.0" prefWidth="510.0" />
+      <Separator layoutX="197.0" layoutY="315.0" prefHeight="3.0" prefWidth="6.0" />
+      <Separator layoutX="190.0" layoutY="315.0" orientation="VERTICAL" prefHeight="114.0" prefWidth="10.0" />
+      <Accordion layoutX="242.0" layoutY="396.0" />
+      <Label layoutX="619.0" layoutY="341.0" text="Posta Kodu" />
+      <Label layoutX="207.0" layoutY="388.0" text="E-posta" />
+      <Label layoutX="211.0" layoutY="363.0" text="GSM" />
+      <Label layoutX="208.0" layoutY="332.0" text="Adres" />
+      <TextField layoutX="269.0" layoutY="328.0" prefHeight="26.0" prefWidth="339.0" promptText="Adres Giriniz" />
+      <TextField layoutX="696.0" layoutY="328.0" prefHeight="26.0" prefWidth="95.0" promptText="Posta Kodu Giriniz" />
+      <TextField layoutX="266.0" layoutY="359.0" prefHeight="26.0" prefWidth="166.0" promptText="Telefon Numarasi Giriniz" />
+      <TextField layoutX="508.0" layoutY="393.0" prefHeight="26.0" prefWidth="278.0" promptText="Link Giriniz" />
+      <Label layoutX="471.0" layoutY="363.0" text="Ilce" />
+      <Label layoutX="472.0" layoutY="397.0" text="Web" />
+      <TextField layoutX="266.0" layoutY="393.0" prefHeight="26.0" prefWidth="166.0" promptText="Email Giriniz" />
+      <Label layoutX="636.0" layoutY="363.0" text="Il" />
+      <TextField layoutX="498.0" layoutY="359.0" prefHeight="26.0" prefWidth="109.0" promptText="Sehir Giriniz" />
+      <TextField layoutX="662.0" layoutY="359.0" prefHeight="26.0" prefWidth="95.0" promptText="Semt Giriniz" />
+      <Separator layoutX="195.0" layoutY="429.0" prefHeight="10.0" prefWidth="604.0" />
+      <TableView layoutX="190.0" layoutY="434.0" prefHeight="162.0" prefWidth="386.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Cari Kodu" />
+          <TableColumn prefWidth="75.0" text="Firma Adi" />
+            <TableColumn prefWidth="75.0" text="Adi " />
+            <TableColumn prefWidth="75.0" text="Soyadi" />
+            <TableColumn prefWidth="75.0" text="Grup Kodu" />
+        </columns>
+      </TableView>
+    </children>
+</AnchorPane>

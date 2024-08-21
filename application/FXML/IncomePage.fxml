@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+      <MenuBar layoutY="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Unspecified Menu">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+        <GridPane hgap="10" layoutX="20.0" layoutY="75.2" prefHeight="356.0" prefWidth="161.0" vgap="20" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="75.0">
+            
+            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="MESKEN KAYIT" textFill="#ece8e8" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="DETAYLI ARAMA" textFill="#FFFFFF" GridPane.rowIndex="6" />
+            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="BANKA ISLEMLERI" textFill="#FFFFFF" GridPane.rowIndex="2" />
+            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="RAPORLAR" textFill="#FFFFFF" GridPane.rowIndex="5" />
+            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="GIDERLER" textFill="#FFFFFF" GridPane.rowIndex="3" />
+            <Button prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196F3;" text="GELIRLER" textFill="#FFFFFF" GridPane.rowIndex="4" />
+         <columnConstraints>
+            <ColumnConstraints fillWidth="false" />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="38.2" minHeight="0.0" prefHeight="0.0" />
+            <RowConstraints maxHeight="39.0" minHeight="0.0" prefHeight="38.2" />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+      <Accordion layoutX="233.0" layoutY="187.0" />
+      <TableView layoutX="185.0" layoutY="89.0" prefHeight="465.0" prefWidth="610.0">
+        <columns>
+          <TableColumn prefWidth="37.60003662109375" text="S.No" />
+          <TableColumn prefWidth="95.99992370605469" text="Evrak/Cari Kodu" />
+            <TableColumn prefWidth="71.199951171875" text="Islem Tarihi" />
+            <TableColumn prefWidth="72.79998779296875" text="Hesap Kodu" />
+            <TableColumn prefWidth="96.79998779296875" text="Hesap Aciklama" />
+            <TableColumn prefWidth="59.20001220703125" text="Aciklama" />
+            <TableColumn prefWidth="100.79998779296875" text="Toplam Tutar" />
+            <TableColumn prefWidth="75.199951171875" text="Odeme Yeri" />
+        </columns>
+      </TableView>
+      <Separator layoutX="1.0" layoutY="76.0" prefHeight="0.0" prefWidth="800.0" />
+      <Separator layoutX="178.0" layoutY="18.0" orientation="VERTICAL" prefHeight="577.0" prefWidth="13.0" />
+      <Button layoutX="185.0" layoutY="555.0" mnemonicParsing="false" text="Ekle" />
+      <Button layoutX="254.0" layoutY="555.0" mnemonicParsing="false" text="Sil" />
+      <Button layoutX="645.0" layoutY="555.0" mnemonicParsing="false" text="Filtrele" />
+      <Button layoutX="716.0" layoutY="555.0" mnemonicParsing="false" text="Degistir" />
+      <MenuBar layoutX="185.0" layoutY="69.0" prefHeight="21.0" prefWidth="617.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Sirala">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Excel'e Aktar">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Makbuz Kes">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Yazdir">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Action 1" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Hesap Tanimla">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Action 1" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <Label layoutX="374.0" layoutY="21.0" prefHeight="60.0" prefWidth="231.0" text="GELIRLER" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Dubai Regular" size="34.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>
